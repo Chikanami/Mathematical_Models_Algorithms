@@ -13,13 +13,11 @@ def f2():
 def h(entity_A, entity_B, P):
     traces = []
     for rnd in range(1, P["iterations"] + 1):
-        # ---- 单步交互：A 的每个值映射到 B 的某个位置 ----
         result = ""
         for value in entity_A:
             index = value % len(entity_B)
             result += entity_B[index]
         traces.append((rnd, result))
-        # ---- 迭代：按 P 中定义的规则改变实体 ----
         entity_A = P["mutate_A"](entity_A, rnd)
         entity_B = P["mutate_B"](entity_B, rnd)
     return traces

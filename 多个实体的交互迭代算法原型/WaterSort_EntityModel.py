@@ -1,17 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Water Sort Puzzle — 多实体交互迭代架构版（完全自包含）
-══════════════════════════════════════════════════════════════════════
-g(f1(W1), f2(W2), ..., fn(Wn), h(M), P)
-
 架构说明（与 DICE.py 同构）：
   f1..fn  — 每个"试管"是一个独立的实体，fn() 返回其初始内容
   h(M)    — 多实体交互规则：输入当前所有试管，返回所有合法倾倒后的后继状态
   P       — 参数集：容积、规范化函数、目标检测、迭代上限
   g()     — BFS 引擎，枚举全部可达状态，输出完整状态空间
-
-完全自包含，不依赖 WaterSortPuzzle.py。
 
 用法：
   python WaterSort_EntityModel.py WaterTest.json              → BFS + 控制台输出
